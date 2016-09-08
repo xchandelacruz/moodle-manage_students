@@ -58,6 +58,7 @@ if (isloggedin() and !isguestuser()) {
 	} else {
 	    for ($i = 0; $i < mssql_num_rows($query); ++$i) {
 	        echo mssql_result($query, $i, 'username'), PHP_EOL;
+	        echo "<br>";
 	    }
 	}
 

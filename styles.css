@@ -1,0 +1,8 @@
+/**
+ * Remove navbar.
+ */
+.block_navigation .block_settings {
+    display: none;
+}
+
+

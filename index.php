@@ -23,15 +23,19 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require('../config.php');
-require_once('lib.php');
+require_once(dirname(__FILE__) .'/../../config.php');
+//require_once('lib.php');
+
+$PAGE->requires->css('styles.css')
 
 $PAGE->set_context(get_system_context());
 $PAGE->set_pagelayout('managestudents');
 $PAGE->set_title("Manage Students: Main Page");
 $PAGE->set_heading("Manage Students");
-$PAGE->set_url($CFG->wwwroot.'moodle-manage_students/index.php');
+$PAGE->set_url($CFG->wwwroot.'/local/moodle-manage_students/index.php');
+//$PAGE->set_url($CFG->wwwroot.'moodle-manage_students/index.php');
 
+$PAGE->navbar->ignore_active();
 
 if (isloggedin() and !isguestuser()) {
 

@@ -46,6 +46,27 @@ $PAGE->navbar->ignore_active();
 if (isloggedin() and !isguestuser()) {
 
     echo $OUTPUT->header();
+
+
+
+	// Send a select query to MSSQL
+	$query = mssql_query('SELECT username FROM mdl_user');
+
+	// Check if there were any records
+	if (!mssql_num_rows($query)) {
+	    echo 'No records found';
+	} else {
+	    for ($i = 0; $i < mssql_num_rows($query); ++$i) {
+	        echo mssql_result($query, $i, 'username'), PHP_EOL;
+	    }
+	}
+
+	// Free the query result
+	mssql_free_result($query);
+
+
+
+
     echo "Hello World";
     echo $OUTPUT->footer();
 

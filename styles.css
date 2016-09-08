@@ -1,7 +1,11 @@
 /**
  * Remove navbar.
  */
-.block_navigation .block_settings {
+.block_navigation {
+    display: none;
+}
+
+.block_settings {
     display: none;
 }
 

@@ -27,9 +27,12 @@ require_once(dirname(__FILE__) .'/../../config.php');
 //require_once('lib.php');
 
 
-$currentcss = $CFG->wwwroot.'/local/moodle-manage_students/styles.css';
+$manageStudentCss = '/local/moodle-manage_students/styles.css';
 
-$PAGE->requires->css($currentcss, true);
+if (file_exists($CFG->dirroot.$manageStudentCss)) {
+//      $PAGE->requires->css(styles.css);
+        $PAGE->requires->css($manageStudentCss, true);
+}
 
 $PAGE->set_context(get_system_context());
 $PAGE->set_pagelayout('managestudents');

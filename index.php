@@ -30,7 +30,7 @@ $PAGE->set_context(get_system_context());
 $PAGE->set_pagelayout('managestudents');
 $PAGE->set_title("Manage Students: Main Page");
 $PAGE->set_heading("Manage Students");
-$PAGE->set_url($CFG->wwwroot.'manage_students/index.php');
+$PAGE->set_url($CFG->wwwroot.'moodle-manage_students/index.php');
 
 
 if (isloggedin() and !isguestuser()) {
